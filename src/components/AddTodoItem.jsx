@@ -17,11 +17,11 @@ const AddTodoItem = () => {
   };
 
   return (
-    <>
-      <input type="text" value={todoText} onChange={handleChange} />
-      <button onClick={updateTodoList}>save</button>
-      <button onClick={() => navigate("/")}>cancel</button>
-    </>
+    <div className="edit-todo-container">
+      <input className="edit-todo-input" type="text" value={todoText} onChange={handleChange} />
+      <button className="edit-todo-btn save-btn" onClick={updateTodoList}>save</button>
+      <button className="edit-todo-btn cancel-btn" onClick={() => navigate("/")}>cancel</button>
+    </div>
   );
 };
 
