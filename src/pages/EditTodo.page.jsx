@@ -19,6 +19,7 @@ const EditTodo = () => {
       content:todoText
     }
     dispatch(editTodo(todoObj))
+    navigate("/")
   }
 
   useEffect(()=>{
