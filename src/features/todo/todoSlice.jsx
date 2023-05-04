@@ -4,7 +4,6 @@ import { getTodoById, deleteTodoById } from "./todoService.jsx";
 import uniqid from "uniqid";
 import { lokalStorage } from "../../utils/lokalStorage.jsx";
 
-
 const todoList = () => lokalStorage("get", "todoList");
 
 const initialState = {
@@ -12,15 +11,12 @@ const initialState = {
   todoList: lokalStorage("get", "todoList") || [],
 };
 
-
-
 export const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
     getTodoItem: (state, action) => {
       const todoId = action.payload;
-      //   const todo=lokalStorage("get","todoList").filter((todo)=>todo.id===todoId);
       state.todoItem = getTodoById(todoId)[0];
     },
     addTodo: (state, action) => {
@@ -36,13 +32,11 @@ export const todoSlice = createSlice({
     editTodo: (state, action) => {
       const todoItem = action.payload;
       state.todoList = todoList().map((todo) => {
-        console.log("todoItem", todo.id);
         if (todo.id === todoItem.id) return todoItem;
-        else return todo
+        else return todo;
       });
       lokalStorage("set", "todoList", state.todoList);
 
-      //   const todo=lokalStorage("get","todoList").filter((todo)=>todo.id===todoId);
       state.todoItem = getTodoById(todoItem.id);
     },
     deleteTodo: (state, action) => {

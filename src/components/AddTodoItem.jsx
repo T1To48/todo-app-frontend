@@ -5,16 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../features/todo/todoSlice.jsx";
 const AddTodoItem = () => {
   const navigate = useNavigate();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const [todoText, setTodoText] = useState("");
 
   const handleChange = (e) => {
     setTodoText(e.target.value);
   };
-const updateTodoList=()=>{
-    dispatch(addTodo(todoText))
-    navigate("/")
-}
+  const updateTodoList = () => {
+    dispatch(addTodo(todoText));
+    navigate("/");
+  };
 
   return (
     <>

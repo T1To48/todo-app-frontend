@@ -29,9 +29,7 @@ export default function SimpleDialog({
         keepMounted
         onClose={closeDialog}
         aria-describedby="alert-dialog-slide-description"
-       
       >
-        {/* <DialogTitle>{`${dialogTitle}`}</DialogTitle> */}
         <DialogContent>
           <Typography variant="div" id="alert-dialog-slide-description">
             {dialogText}
@@ -39,12 +37,7 @@ export default function SimpleDialog({
         </DialogContent>
         <DialogActions>
           <Button onClick={closeDialog}>Cancel</Button>
-            <Button
-              onClick={handleDelete}
-            >
-              Confirm
-            </Button>
-          
+          <Button onClick={handleDelete}>Confirm</Button>
         </DialogActions>
       </Dialog>
     </>
