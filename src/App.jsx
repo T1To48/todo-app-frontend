@@ -12,7 +12,7 @@ function App() {
         <Route path="/">
           <Route index element={<TodoList />} />
           <Route path="add-todo" element={<AddTodo />} />
-          <Route path="edit-todo" element={<EditTodo />} />
+          <Route path="edit-todo/:todoId" element={<EditTodo />} />
         </Route>
       </Routes>
     </BrowserRouter>

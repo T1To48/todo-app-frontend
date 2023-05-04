@@ -1,12 +1,13 @@
 import React from 'react'
-
-const TodoItem = ({text}) => {
+import { useNavigate } from 'react-router-dom'
+const TodoItem = ({text,todoId}) => {
+  const navigate = useNavigate()
   return (
     <div>
        <br/> <br/>
 
         <div>{text}</div>
-        <button onClick={()=>Navigate("/edit-todo")}>edit</button>
+        <button onClick={()=>navigate(`/edit-todo/${todoId}`)}>edit</button>
         <button onClick={()=>console.log("delete")}>delete </button>
         {/* <button onClick={()=>console.log("done")}>done</button> */}
     </div>

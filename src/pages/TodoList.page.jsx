@@ -15,7 +15,7 @@ const {todoList}=useSelector(state=>state.todo)
       <div>
         <button onClick={()=>navigate("/add-todo")} > add todo</button>
       </div>
-      {todoList.map((todo) => (<TodoItem key={todo.id} text={todo.content}/>))}
+      {todoList.map((todo) => (<TodoItem key={todo.id} todoId={todo.id} text={todo.content}/>))}
     </div>
   )
 }
