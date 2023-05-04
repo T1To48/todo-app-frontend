@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTodoById, deleteTodoById } from "./todoService.jsx";
 
-import uniqid from "uniqid";
+import { genID } from "../../utils/generate_short_id.jsx";
 import { lokalStorage } from "../../utils/lokalStorage.jsx";
 
 const todoList = () => lokalStorage("get", "todoList");
@@ -20,8 +20,9 @@ export const todoSlice = createSlice({
       state.todoItem = getTodoById(todoId)[0];
     },
     addTodo: (state, action) => {
+      
       const newTodo = {
-        id: uniqid(),
+        id: genID(),
         content: action.payload,
       };
 
